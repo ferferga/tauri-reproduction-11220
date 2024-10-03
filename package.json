@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "gen-icon": "tauri icon src/assets/typescript.svg",
+    "tauri:build": "npm run gen-icon && tauri build",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri"
