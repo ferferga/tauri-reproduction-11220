@@ -1,0 +1,16 @@
+{
+    "name": "Test Tauri issue",
+    "image": "node:20-slim",
+    "features": {
+      "ghcr.io/devcontainers/features/rust:1": {
+        "profile": "default"
+      }
+    },
+    "postCreateCommand": {
+      "npm": "npm ci --no-audit",
+      "no-yarn": "unset YARN_VERSION && rm -rf /opt/yarn*",
+      "use-bash": "rm -rf /bin/sh && ln -s /bin/bash /bin/sh",
+      "git-config": "git config --global core.editor 'code --wait'",
+      "postunpack": ".devcontainer/postunpack.sh"
+    }
+  }
