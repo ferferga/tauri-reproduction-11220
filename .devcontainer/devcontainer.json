@@ -1,0 +1,17 @@
+{
+  "name": "Codespace for testing Tauri issue",
+  "build": { 
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "root",
+  "features": {
+    "ghcr.io/devcontainers/features/rust:1": {
+      "profile": "default"
+    }
+  },
+  "postCreateCommand": {
+    "tauri-deps": "install_packages $(cat apt_packages)",
+    "npm": "npm ci --no-audit",
+    "unshallow": "git fetch --unshallow || true"
+  }
+}
